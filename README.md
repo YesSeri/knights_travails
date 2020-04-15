@@ -11,5 +11,19 @@ Using breadth first, I will have to just go through all the possible ways until 
 
 ### Road map
   1. Make a knight class. Should contain:
-      How it moves (an array with x and y values, e.g. [-2, -1]). 
+      Init contains x and y position of knight. 
+      A list of the L shape that it moves. (an array with x and y values, e.g. [-2, -1]).
+      A method, which returns an array of all currently possible moves. 
       
+  2. Make a gameboard. 
+      Init 8x8 array with positions.
+      At start all pieces are initiated in a hash.  (For full chess) Maybe only knight now. Key (name) is a symbol e.g. :black_knight, and value is a one char string (for example K for knight).
+      Either a position can be empty or have a piece. 
+      Display method that shows pieces and empty squares. 
+      Knight position can be saved by adding the knight x and y to the position. 
+      
+  3. Make a move node class, maybe.
+    Can be used for binary search. Maybe also include a distance so the search can be used in the future for other things, where the distance is of interest. Probably better to skip distance. 
+    All that is needed is current square and an array of children. 
+    Implement a parent class variable. If a child is equal to parent, then stop that route. That means it has traveled in a cycle. E.g [F5][D6][F5]. The number of steps between a child and parent or grandparent node must be an even number for it to ever be a cycle.
+  4. Make a knight's travail class. This is used for the assignment goal. Node helper class might not be necessary. 
