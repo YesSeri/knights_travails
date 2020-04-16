@@ -1,0 +1,27 @@
+require 'pry'
+require 'pry-byebug'
+require_relative 'knight.rb'
+
+class Knight_Node
+  attr_accessor :data, :parent, :child_array
+  def initialize(coordinates, parent = nil)
+    @knight = Knight.new(coordinates)
+    @parent = parent
+    @child_array = nil
+  end
+end
+
+
+
+start = [2, 1]
+finish = [5, 5]
+visited_squares = []
+root = Knight_Node.new(start)
+queue = []
+queue << root
+
+until queue.size == 0
+  current = queue.shift
+  print current.knight
+  
+end
